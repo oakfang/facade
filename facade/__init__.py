@@ -1,1 +1,1 @@
-from base import loader
+from .base import loader
