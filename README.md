@@ -55,3 +55,18 @@ triple.decalre('int triple(int);')
 
 print triple.triple(10) // 30
 ```
+
+You can also create a declaration file to save yourself the "effort". Let's assume `triple.h` to be in the same directory as `tripl.dll`:
+
+```c
+int triple(int);
+```
+
+And then, on your `.py` file:
+
+```python
+from facade import dll
+import triple
+
+print triple.triple(10) // 30
+```
