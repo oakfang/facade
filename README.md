@@ -40,3 +40,18 @@ import views # a .pyv file, using `pyvue`
 
 view.index_page(...)
 ```
+
+
+### Using the DLL loader
+`facade` is bundled with a [CFFI](http://cffi.readthedocs.org/en/latest/index.html)-based DLL loader, and based on this awesome [gist](https://gist.github.com/seanjensengrey/f5d73bbdf22cfa1ad463).
+
+It is currently only tested against DLLs created using `rustc`.
+
+```python
+from facade import dll
+import triple
+
+triple.decalre('int triple(int);')
+
+print triple.triple(10) // 30
+```
