@@ -1,6 +1,11 @@
-from pyvue import view, view_parser
+from __future__ import absolute_import
+try:
+    from pyvue import view, view_parser
+except ImportError:
+    print "pip install pyvue"
+    raise ImportError("The pyv loader cannot be used without pyvue")
 
-from base import loader
+from .base import loader
 
 
 @loader('.pyv')

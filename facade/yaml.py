@@ -1,5 +1,9 @@
 from __future__ import absolute_import
-import yaml #pip install
+try:
+    import yaml
+except ImportError:
+    print "pip install yaml"
+    raise ImportError("The YAML loader cannot be used without yaml")
 from .base import loader
 
 @loader('.yaml')
